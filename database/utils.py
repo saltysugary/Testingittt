@@ -13,15 +13,15 @@ def initialize():
 
 
 def find_translation(text: str) -> str:
-    try: 
-        text = message.text 
-        cursor.execute("SELECT * FROM translations WHERE russian = (?)", [text,])
-        result = cursor.fetchone() 
-
-        await bot.send_message(msg.from_user.id, result.text)
+    text = (text.lower()).strip()
+    cursor.execute("SELECT translation FROM translations WHERE russian = (?)", (text,))
+    result = cursor.fetchone() 
+    
+    if result:
+        return result
 
     else: 
-        await bot.send_message(msg.from_user.id, "Перевод не найден")
+        return "Перевод не найден"
     
     # TODO Make check if text is not empty
     # TODO don't forget to make text lower and strip it

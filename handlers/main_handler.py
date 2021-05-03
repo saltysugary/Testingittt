@@ -11,16 +11,7 @@ async def process_start_command(message: types.Message):
 
 @dp.message_handler()
 async def echo_message(message: types.Message):
-
-    
-    # TODO Message have a field which contains message text, check it in the docs
-
-    # TODO You also should name variable to show its designation.
-    # TODO Word isn't really good name
-    # TODO (especially in case you got the whole phrase from user, not just word)
-
-    word = str(message)
-
-    # TODO here you should call find_translation func. from utils
-    # TODO remember to write it in utils
-    await bot.send_message(message.from_user.id, word)
+    text = message.text 
+    find_translation(text) 
+   
+    #await bot.send_message(message.from_user.id, text)
