@@ -16,10 +16,10 @@ def find_translation(text: str) -> str:
     try: 
         text = message.text 
         cursor.execute("SELECT * FROM translations WHERE russian = (?)", [text,])
-        result = cursor.fetchall() 
+        result = cursor.fetchone() 
 
         await bot.send_message(msg.from_user.id, result.text)
-        
+
     else: 
         await bot.send_message(msg.from_user.id, "Перевод не найден")
     
