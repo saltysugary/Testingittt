@@ -10,11 +10,9 @@ async def process_start_command(message: types.Message):
 
 
 @dp.message_handler()
-# function's name should tell you what does the function do
 async def echo_message(message: types.Message):
 
-    # TODO message is a Message class object
-    # TODO I'm not sure you can get the message text by doing str(message)
+    
     # TODO Message have a field which contains message text, check it in the docs
 
     # TODO You also should name variable to show its designation.
