@@ -28,4 +28,4 @@ def find_translation(text: str) -> str:
     # TODO Write correct request to database to find translation
     # TODO fetch just first entry of response
     # TODO return translated text or "Nothing found" string
-    pass
+    
