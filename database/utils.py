@@ -18,14 +18,8 @@ def find_translation(text: str) -> str:
     result = cursor.fetchone() 
     
     if result:
-        return result
+        return result[0]
 
     else: 
         return "Перевод не найден"
-    
-    # TODO Make check if text is not empty
-    # TODO don't forget to make text lower and strip it
-    # TODO Write correct request to database to find translation
-    # TODO fetch just first entry of response
-    # TODO return translated text or "Nothing found" string
-    
+

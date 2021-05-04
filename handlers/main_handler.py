@@ -11,4 +11,7 @@ async def process_start_command(message: Message):
 
 @dp.message_handler()
 async def echo_message(message: Message):
+    text = message.text
+    answer = find_translation(text)
+    await bot.send_message(message.from_user.id, answer)
     pass
